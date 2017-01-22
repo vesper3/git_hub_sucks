@@ -68,7 +68,7 @@ public class Enemy_Generator : MonoBehaviour
 
     public void Activate_Stage(int start_stage)
     {
-        if (stage == 0)
+        if (start_stage == 0)
         {
             Debug.Log("Game is now in standby...");
         }
