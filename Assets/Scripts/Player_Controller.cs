@@ -43,6 +43,9 @@ public class Player_Controller : MonoBehaviour
     public float rotation_speed;
     public float movement_speed;
 
+    public float x_bounds;
+    public float y_bounds;
+
     Vector3 aim_vector;
     Quaternion target_rotation;
 
@@ -65,6 +68,23 @@ public class Player_Controller : MonoBehaviour
         if (move == true)
         {
             transform.position += move_vector * movement_speed * Time.deltaTime;
+            if (transform.position.x > x_bounds)
+            {
+                transform.position = new Vector3(x_bounds, 0.0f, transform.position.z);
+            }
+            else if (transform.position.x < -x_bounds)
+            {
+                transform.position = new Vector3(-x_bounds, 0.0f, transform.position.z);
+            }
+
+            if (transform.position.z > y_bounds)
+            {
+                transform.position = new Vector3(transform.position.x, 0.0f, y_bounds);
+            }
+            else if (transform.position.z < -x_bounds)
+            {
+                transform.position = new Vector3(transform.position.x, 0.0f, -y_bounds);
+            }
             move = false;
         }
 
@@ -153,5 +173,13 @@ public class Player_Controller : MonoBehaviour
             }
         }
          
-    } 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Bounds")
+        {
+
+        }
+    }
 }
