@@ -214,7 +214,7 @@ public class Player_Controller : MonoBehaviour
                 if (health < 0)
                     health = 0;
             }
-            else if (other.gameObject.name.Contains("Turret"))
+            else if (other.gameObject.name.Contains("Turrent"))
             {
                 health -= 100;
                 if (health < 0)
