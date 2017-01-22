@@ -28,18 +28,57 @@ public class StartBox : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
+        Renderer rend = GetComponent<Renderer>();
+        Material mat = rend.material;
+
         //Assumes only thing hitting it is pellet
         if (other.GetComponent<Pellet_Controller>().color == Pellet_Controller.colors.green)
         {
-            green_hit=true;
+            green_hit = true;
+            if (red_hit && green_hit)
+            {
+                mat.SetColor("_Color", Color.yellow);
+            }
+            else if (blue_hit && green_hit)
+            {
+                mat.SetColor("_Color", Color.cyan);
+            }
+            else if(green_hit)
+            { 
+                mat.SetColor("_Color", Color.green);
+            }
         }
-        if (other.GetComponent<Pellet_Controller>().color == Pellet_Controller.colors.red)
+        else if (other.GetComponent<Pellet_Controller>().color == Pellet_Controller.colors.red)
         {
             red_hit = true;
+            if (red_hit && green_hit)
+            {
+                mat.SetColor("_Color", Color.yellow);
+            }
+            else if (blue_hit && red_hit)
+            {
+                mat.SetColor("_Color", Color.magenta);
+            }
+            else if (red_hit)
+            {
+                mat.SetColor("_Color", Color.red);
+            }
         }
-        if (other.GetComponent<Pellet_Controller>().color == Pellet_Controller.colors.blue)
+        else if (other.GetComponent<Pellet_Controller>().color == Pellet_Controller.colors.blue)
         {
             blue_hit = true;
+            if (blue_hit && green_hit)
+            {
+                mat.SetColor("_Color", Color.cyan);
+            }
+            else if (blue_hit && red_hit)
+            {
+                mat.SetColor("_Color", Color.magenta);
+            }
+            else if (blue_hit)
+            {
+                mat.SetColor("_Color", Color.blue);
+            }
         }
     }
 }
