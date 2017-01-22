@@ -35,6 +35,7 @@ public class Enemy_Controller : MonoBehaviour
     public bool live;
     public bool bounds;
     public Pellet_Controller.colors color;
+    public float health = 100;
 
     public void Start()
     {
@@ -45,7 +46,8 @@ public class Enemy_Controller : MonoBehaviour
 
     public void Update()
     {
-
+        if (health == 0)
+            Destroy(gameObject);
     }
 
     public void FixedUpdate()

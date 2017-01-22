@@ -34,7 +34,7 @@ public class Pellet_Controller : MonoBehaviour
 	
 	void Update ()
     {
-        transform.position +=(-1*transform.forward*speed*Time.deltaTime);
+        transform.position +=(transform.forward*speed*Time.deltaTime);
         if (transform.position.x > x_bounds)
         {
             Destroy(gameObject);
@@ -139,9 +139,36 @@ public class Pellet_Controller : MonoBehaviour
         {
             if (GM.DEBUG == true)
                 print("I am hitting an enemy");
-            if(!other.gameObject.name.Contains("Start"))
-            Destroy(other.gameObject);
-            Destroy(gameObject);
+            if (!other.gameObject.name.Contains("Start"))
+            {
+                Destroy(other.gameObject);
+
+                //if (other.gameObject.name.Contains("Asteroid"))
+                //{
+                //    //-25 hp
+                //}
+
+                //if (other.gameObject.name.Contains("Missile"))
+                //{
+                //    //- 100 hp
+                //}
+
+                //else if (other.gameObject.name.Contains("Scout"))
+                //{
+                //    //- 25hp
+                //    //right color 100
+                //}
+                //else if (other.gameObject.name.Contains("Fighter"))
+                //{
+                //    //-12.5 health
+                //}
+                //else if (other.gameObject.name.Contains("Turret"))
+                //{
+                //    //-6.25
+                //}
+
+                //Destroy(gameObject);
+            }
 
             //Damage that Enemy
         }

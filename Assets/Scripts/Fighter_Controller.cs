@@ -14,7 +14,7 @@ public class Fighter_Controller : Enemy_Controller
     {
         GM = GameObject.FindObjectOfType<Game_Manager>();
         EG = GameObject.FindObjectOfType<Enemy_Generator>();
-        LC = GameObject.FindObjectOfType<Pellet_Shooter_Controller>();
+        LC = GetComponent<Pellet_Shooter_Controller>();
         bounds = false;
     }
 
