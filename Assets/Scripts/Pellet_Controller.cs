@@ -20,6 +20,8 @@ public class Pellet_Controller : MonoBehaviour
     
     public float speed;
 
+    public float x_bounds;
+    public float y_bounds;
 
     public enum colors { red, blue, green, yellow, cyan, magenta, white };
     public colors color;
@@ -33,6 +35,24 @@ public class Pellet_Controller : MonoBehaviour
 	void Update ()
     {
         transform.position +=(-1*transform.forward*speed*Time.deltaTime);
+        if (transform.position.x > x_bounds)
+        {
+            Destroy(gameObject);
+        }
+        else if (transform.position.x < -x_bounds)
+        {
+            Destroy(gameObject);
+        }
+
+        if (transform.position.z > y_bounds)
+        {
+            Destroy(gameObject);
+        }
+        else if (transform.position.z < -y_bounds)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     private void FixedUpdate()
