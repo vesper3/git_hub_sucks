@@ -227,7 +227,7 @@ public class Player_Controller : MonoBehaviour
 
         if(other.gameObject.tag == "Pellet")
         {
-            if (other.gameObject.name.Contains("Grey"))
+            if (other.gameObject.name.Contains("Gray"))
             {
                 health -= 10;
                 if (health < 0)

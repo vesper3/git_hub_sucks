@@ -54,6 +54,10 @@ public class Enemy_Generator : MonoBehaviour
     public float stage_7_delay = 20.0f;
     public bool stage_7_run = false;
 
+    public Material[] small;
+    public Material[] medium;
+    public Material[] large;
+
     void Start()
     {
 

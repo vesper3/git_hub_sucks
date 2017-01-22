@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -532,7 +532,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f7572b1f0286bc545a0c2bc0b5450fbf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -899,6 +899,30 @@ MonoBehaviour:
   stage_3_scout_groups: 6
   stage_7_delay: 20
   stage_7_run: 0
+  small:
+  - {fileID: 2100000, guid: 283fcb521a5a7a54292a9d0f2553394c, type: 2}
+  - {fileID: 2100000, guid: 5c5d3aadebcea6a4eb23caffa3c28a18, type: 2}
+  - {fileID: 2100000, guid: af9efb1c7bd1b524aa611cc436ab25b0, type: 2}
+  - {fileID: 2100000, guid: 67ebe1d6242a2aa46ae5ec474d4152b7, type: 2}
+  - {fileID: 2100000, guid: cca6fb8295848d74f8c5f2a2862e29a6, type: 2}
+  - {fileID: 2100000, guid: a189a5683f023aa45a1b685b20077ab8, type: 2}
+  - {fileID: 2100000, guid: 0fd54586958d9b14c8204d396f230c2f, type: 2}
+  medium:
+  - {fileID: 2100000, guid: ad747d23313f4ec44b3c9b53d7f5cbf0, type: 2}
+  - {fileID: 2100000, guid: bef08fe6e7846dd418db8e930c4e06c9, type: 2}
+  - {fileID: 2100000, guid: d25740d7069cc114793a3facab4ddaed, type: 2}
+  - {fileID: 2100000, guid: 832c808ca46b72d4db1982b2cba6f577, type: 2}
+  - {fileID: 2100000, guid: b0880fd11e9c476499d96605f484a48c, type: 2}
+  - {fileID: 2100000, guid: 9bc5f95cadfbb5d4d985c1e66c3dc66a, type: 2}
+  - {fileID: 2100000, guid: a73c5180317de8843beb2a5d97ea9e0c, type: 2}
+  large:
+  - {fileID: 2100000, guid: 3ba35b3480846e4449951f3ef96585f9, type: 2}
+  - {fileID: 2100000, guid: 99bf6a9d8177b9a40a30e9b6f486f799, type: 2}
+  - {fileID: 2100000, guid: 558cad9e15c0ac14489776466f7dda52, type: 2}
+  - {fileID: 2100000, guid: 5e6be4ae373ec374ba3947d75fea38b6, type: 2}
+  - {fileID: 2100000, guid: 493fd9fd221de3f4883c46e55ee86343, type: 2}
+  - {fileID: 2100000, guid: 0a4f5ea7ef7f60f4b90d09b92ebdafb0, type: 2}
+  - {fileID: 2100000, guid: 80649ce877a655844b5586fedaf82576, type: 2}
 --- !u!4 &742598408
 Transform:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class Pellet_Controller : MonoBehaviour
     public float x_bounds;
     public float y_bounds;
 
-    public enum colors { red, blue, green, yellow, cyan, magenta, white, gray };
+    public enum colors { red, blue, green, yellow, cyan, magenta, white, gray, none };
     public colors color;
 
     void Start ()
