@@ -161,7 +161,7 @@ public class Pellet_Controller : MonoBehaviour
                 {
                     other.GetComponent<Enemy_Controller>().health -= 12.5f;
                 }
-                else if (other.gameObject.name.Contains("Turret"))
+                else if (other.gameObject.name.Contains("Turrent"))
                 {
                     other.GetComponent<Enemy_Controller>().health -= 6.25f;
                 }
