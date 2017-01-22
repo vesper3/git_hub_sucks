@@ -836,7 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EG: {fileID: 742598407}
   DEBUG: 1
-  stage: 10
+  stage: 8
   time_till_enemy_check: 10
 --- !u!4 &691016337
 Transform:

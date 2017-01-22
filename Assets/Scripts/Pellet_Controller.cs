@@ -69,7 +69,6 @@ public class Pellet_Controller : MonoBehaviour
 
         angle = Quaternion.Slerp(this.transform.rotation, other.transform.rotation, 0.5f);
 
-
         if (other.gameObject.tag == "Pellet")
         {
             if (this.color == colors.red && other.GetComponent<Pellet_Controller>().color == colors.green)
@@ -133,7 +132,6 @@ public class Pellet_Controller : MonoBehaviour
                 print("I am hitting a player");
             Destroy(gameObject);
             //Heal that Player
-
         }
         else if (other.gameObject.tag == "Enemy")
         {
@@ -141,34 +139,37 @@ public class Pellet_Controller : MonoBehaviour
                 print("I am hitting an enemy");
             if (!other.gameObject.name.Contains("Start"))
             {
-                //Destroy(other.gameObject);
-
                 if (other.gameObject.name.Contains("Asteroid"))
                 {
                     other.GetComponent<Enemy_Controller>().health -= 25;
                 }
-
-                if (other.gameObject.name.Contains("Missile"))
+                else if (other.gameObject.name.Contains("Missile"))
                 {
                     other.GetComponent<Enemy_Controller>().health -= 100;
                 }
-
                 else if (other.gameObject.name.Contains("Scout"))
                 {
-                    other.GetComponent<Enemy_Controller>().health -= 10;
+                    if (other.gameObject.GetComponent<Enemy_Controller>().color == color)
+                        other.GetComponent<Enemy_Controller>().health -= 100;
+                    else
+                        other.GetComponent<Enemy_Controller>().health -= 25;
                 }
                 else if (other.gameObject.name.Contains("Fighter"))
                 {
-                    other.GetComponent<Enemy_Controller>().health -= 12.5f;
+                    if (other.gameObject.GetComponent<Enemy_Controller>().color == color)
+                        other.GetComponent<Enemy_Controller>().health -= 50f;
+                    else
+                        other.GetComponent<Enemy_Controller>().health -= 12.5f;
                 }
                 else if (other.gameObject.name.Contains("Turrent"))
                 {
-                    other.GetComponent<Enemy_Controller>().health -= 6.25f;
+                    if (other.gameObject.GetComponent<Enemy_Controller>().color == color)
+                        other.GetComponent<Enemy_Controller>().health -= 25f;
+                    else
+                        other.GetComponent<Enemy_Controller>().health -= 6.25f;
                 }
-
                 Destroy(gameObject);
             }
-
             //Damage that Enemy
         }
     } 
