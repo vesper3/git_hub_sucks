@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -303,6 +303,7 @@ MonoBehaviour:
   movement_speed: 50
   x_bounds: 65
   y_bounds: 180
+  fire_sound: {fileID: 0}
 --- !u!23 &283052055
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -793,7 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EG: {fileID: 742598407}
   DEBUG: 1
-  stage: 4
+  stage: 6
   time_till_enemy_check: 10
 --- !u!4 &691016337
 Transform:
@@ -921,6 +922,7 @@ MonoBehaviour:
   movement_speed: 50
   x_bounds: 65
   y_bounds: 180
+  fire_sound: {fileID: 0}
 --- !u!23 &970665367
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1046,6 +1048,7 @@ MonoBehaviour:
   movement_speed: 50
   x_bounds: 65
   y_bounds: 180
+  fire_sound: {fileID: 0}
 --- !u!23 &1174530231
 MeshRenderer:
   m_ObjectHideFlags: 0
