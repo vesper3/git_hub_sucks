@@ -68,7 +68,7 @@ public class Enemy_Generator : MonoBehaviour
 
     public void Activate_Stage(int start_stage)
     {
-        if (stage == 0)
+        if (start_stage == 0)
         {
             Debug.Log("Game is now in standby...");
         }
@@ -124,6 +124,31 @@ public class Enemy_Generator : MonoBehaviour
         {
             Debug.Log("Actvating Stage 5");
             stage = 5;
+        }
+        else if (start_stage == 6)
+        {
+            Debug.Log("Actvating Stage 6");
+            stage = 6;
+        }
+        else if (start_stage == 7)
+        {
+            Debug.Log("Actvating Stage 7");
+            stage = 7;
+        }
+        else if (start_stage == 8)
+        {
+            Debug.Log("Actvating Stage 8");
+            stage = 8;
+        }
+        else if (start_stage == 9)
+        {
+            Debug.Log("Actvating Stage 9");
+            stage = 9;
+        }
+        else if (start_stage == 10)
+        {
+            Debug.Log("Actvating Stage 10");
+            stage = 10;
         }
         else
         {
@@ -225,6 +250,26 @@ public class Enemy_Generator : MonoBehaviour
         else if (stage == 5)
         {
             Stage5();
+        }
+        else if (stage == 6)
+        {
+            Stage6();
+        }
+        else if (stage == 7)
+        {
+            Stage7();
+        }
+        else if (stage == 8)
+        {
+            Stage8();
+        }
+        else if (stage == 9)
+        {
+            Stage9();
+        }
+        else if (stage == 10)
+        {
+            Stage10();
         }
     }
 
@@ -339,6 +384,132 @@ public class Enemy_Generator : MonoBehaviour
     }
 
     public void Stage5()
+    {
+        //Spawn 3 fighters from left, right, and up, then scouts of the random color from those directions
+        Debug.Log("Placing Fighter, Behavior: Default, From Above");
+        GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.up), Quaternion.identity);
+        Enemy_Controller EC = fighter.GetComponent<Enemy_Controller>();
+        EC.color = Pellet_Controller.colors.red;
+        Debug.Log("Placing Fighter, Behavior: Default, From Left");
+        GameObject fighter1 = (GameObject)Instantiate(Fighter, generate_random_direction(direction.left), Quaternion.identity);
+        Enemy_Controller EC1 = fighter1.GetComponent<Enemy_Controller>();
+        EC1.color = Pellet_Controller.colors.blue;
+        Debug.Log("Placing Fighter, Behavior: Default, From Right");
+        GameObject fighter2 = (GameObject)Instantiate(Fighter, generate_random_direction(direction.right), Quaternion.identity);
+        Enemy_Controller EC2 = fighter2.GetComponent<Enemy_Controller>();
+        EC2.color = Pellet_Controller.colors.green;
+        for (int i = 0; i < 15; ++i)
+        {
+            if (i == 0)
+            {
+                Debug.Log("Placing Scout, Behavior: Default, From Above");
+                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.up), Quaternion.identity);
+                Enemy_Controller EC3 = scout.GetComponent<Enemy_Controller>();
+                EC.color = Pellet_Controller.colors.blue;
+            }
+            else if (i == 1)
+            {
+                Debug.Log("Placing Scout, Behavior: Default, From Left");
+                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.left), Quaternion.identity);
+                Enemy_Controller EC3 = scout.GetComponent<Enemy_Controller>();
+                EC.color = Pellet_Controller.colors.green;
+            }
+            else
+            {
+                Debug.Log("Placing Scout, Behavior: Default, From Right");
+                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.right), Quaternion.identity);
+                Enemy_Controller EC3 = scout.GetComponent<Enemy_Controller>();
+                EC.color = Pellet_Controller.colors.red;
+            }
+        }
+        stage = 0;
+    }
+
+    public void Stage6()
+    {
+        //Spawn 8 fighters, two from each direction, then scouts of the random color from those directions
+        for (int i = 0; i < 8; ++i)
+        {
+            if (i == 0 || i == 7)
+            {
+                Debug.Log("Placing Fighter, Behavior: Default, From Above");
+                GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.up), Quaternion.identity);
+                Enemy_Controller EC = fighter.GetComponent<Enemy_Controller>();
+                EC.color = Pellet_Controller.colors.red;
+            }
+            else if (i == 1 || i == 6)
+            {
+                Debug.Log("Placing Fighter, Behavior: Default, From Right");
+                GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.right), Quaternion.identity);
+                Enemy_Controller EC = fighter.GetComponent<Enemy_Controller>();
+                EC.color = Pellet_Controller.colors.green;
+            }
+            else if (i == 2 || i == 5)
+            {
+                Debug.Log("Placing Fighter, Behavior: Default, From Left");
+                GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.left), Quaternion.identity);
+                Enemy_Controller EC = fighter.GetComponent<Enemy_Controller>();
+                EC.color = Pellet_Controller.colors.blue;
+            }
+            else
+            {
+                Debug.Log("Placing Fighter, Behavior: Default, From Below");
+                GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.down), Quaternion.identity);
+                Enemy_Controller EC = fighter.GetComponent<Enemy_Controller>();
+                EC.color = Pellet_Controller.colors.red;
+            }
+        }
+        for (int i = 0; i < 60; ++i)
+        {
+            rand = (float)Random.Range(0, 4);
+            if (rand == 0)
+            {
+                Debug.Log("Placing Scout, Behavior: Default, From Above");
+                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.up), Quaternion.identity);
+                Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
+                EC.color = Pellet_Controller.colors.blue;
+            }
+            else if (rand == 1)
+            {
+                Debug.Log("Placing Scout, Behavior: Default, From Right");
+                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.right), Quaternion.identity);
+                Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
+                EC.color = Pellet_Controller.colors.green;
+            }
+            else if (rand == 2)
+            {
+                Debug.Log("Placing Scout, Behavior: Default, From Left");
+                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.left), Quaternion.identity);
+                Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
+                EC.color = Pellet_Controller.colors.red;
+            }
+            else
+            {
+                Debug.Log("Placing Scout, Behavior: Default, From Below");
+                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.down), Quaternion.identity);
+                Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
+                EC.color = Pellet_Controller.colors.blue;
+            }
+        }
+        stage = 0;
+    }
+
+    public void Stage7()
+    {
+
+    }
+
+    public void Stage8()
+    {
+
+    }
+
+    public void Stage9()
+    {
+
+    }
+
+    public void Stage10()
     {
 
     }
