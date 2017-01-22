@@ -70,7 +70,7 @@ public class Enemy_Generator : MonoBehaviour
             stage = 2;
             timer = stage_2_delay + Time.fixedTime;
         }
-        if (start_stage == 3)
+        else if (start_stage == 3)
         {
             Debug.Log("Actvating Stage 3");
             stage = 3;
@@ -167,34 +167,32 @@ public class Enemy_Generator : MonoBehaviour
     public enum direction { up, down, left, right, horizontal, vertical, any, onscreen };
     public Vector3 generate_random_direction(direction dir)
     {
-        //Values outside of the screen within half of the screen size
-        //320, 140
-        //200, 240
-        //88, 106
         int a = (int)Mathf.Round(s_width / 2);
         int b = (int)Mathf.Round(s_width / 8);
         int c = (int)Mathf.Round(s_height / 2);
         int d = (int)Mathf.Round(s_height / 8);
-        int x_inner_bound = a + b;
-        int x_outer_bound = x_inner_bound + b;
-        int z_inner_bound = c + d;
-        int z_outer_bound = z_inner_bound + d;
-        Debug.Log(s_width);
+        int z_inner_bound = a + b;
+        int z_outer_bound = z_inner_bound + b;
+        int x_inner_bound = c + d;
+        int x_outer_bound = x_inner_bound + d;
+        float x_right = Random.Range(z_inner_bound, z_outer_bound);
+        float x_left = Random.Range(-z_outer_bound, -z_inner_bound);
+        float z_down = Random.Range(x_inner_bound, x_outer_bound);
+        float z_up = Random.Range(-x_outer_bound, -x_inner_bound);
+        //Values outside of the screen, random between up/down, left/right
+        float x_out = Random.value > 0.5f ? x_left : x_right;
+        float z_out = Random.value > 0.5f ? z_up : z_down;
+        //Values somewhere within the screen bounds
+        float x_in = Random.Range(-c, c);
+        float z_in = Random.Range(-a, a);
+        /*Debug.Log(s_width);
         Debug.Log(s_height);
         Debug.Log(x_inner_bound);
         Debug.Log(x_outer_bound);
         Debug.Log(z_inner_bound);
         Debug.Log(z_outer_bound);
-        float x_right = Random.Range(200, 240);
-        float x_left = Random.Range(-240, -200);
-        float z_down = Random.Range(88, 105);
-        float z_up = Random.Range(-105, -88);
-        //Values outside of the screen, random between up/down, left/right
-        float x_out = Random.value > 0.5f ? x_left : x_right;
-        float z_out = Random.value > 0.5f ? z_up : z_down;
-        //Values somewhere within the screen bounds
-        float x_in = Random.Range(-s_width / 2, s_width / 2);
-        float z_in = Random.Range(-s_height / 2, s_height / 2);
+        Debug.Log(x_in);
+        Debug.Log(z_in);*/
 
         if (dir == direction.any)
         {

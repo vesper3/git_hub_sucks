@@ -301,8 +301,8 @@ MonoBehaviour:
   firing: 0
   rotation_speed: 0.3
   movement_speed: 50
-  x_bounds: 0
-  y_bounds: 0
+  x_bounds: 65
+  y_bounds: 180
 --- !u!23 &283052055
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -793,7 +793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EG: {fileID: 742598407}
   DEBUG: 1
-  stage: 2
+  stage: 1
   time_till_enemy_check: 10
 --- !u!4 &691016337
 Transform:
@@ -843,12 +843,12 @@ MonoBehaviour:
   Turrent: {fileID: 1595903502048778, guid: aa6b21ae636be2e4d8894304c47ef91f, type: 2}
   Missile: {fileID: 1163551068301500, guid: 2fe65cafe74b28a408862163f74d6fca, type: 2}
   Boss: {fileID: 907318114, guid: 46a04c292394b75429b0b0045480b666, type: 2}
-  s_width: 320
-  s_height: 100
+  s_width: 360
+  s_height: 130
   stage: 0
   timer: 0
   stage_1_delay: 0.5
-  stage_1_asteroids: 100
+  stage_1_asteroids: 25
   stage_2_delay: 5
   stage_2_scouts: 12
   stage_3_delay: 5
@@ -911,8 +911,8 @@ MonoBehaviour:
   firing: 0
   rotation_speed: 0.3
   movement_speed: 50
-  x_bounds: 10
-  y_bounds: 10
+  x_bounds: 65
+  y_bounds: 180
 --- !u!23 &970665367
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1036,8 +1036,8 @@ MonoBehaviour:
   firing: 0
   rotation_speed: 0.3
   movement_speed: 50
-  x_bounds: 150
-  y_bounds: 50
+  x_bounds: 65
+  y_bounds: 180
 --- !u!23 &1174530231
 MeshRenderer:
   m_ObjectHideFlags: 0
