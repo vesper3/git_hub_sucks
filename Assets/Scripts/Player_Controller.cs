@@ -52,7 +52,7 @@ public class Player_Controller : MonoBehaviour
 
     Vector3 move_vector;
 
-    
+    public AudioClip fire_sound;
 
 	void Start ()
     {
@@ -173,6 +173,7 @@ public class Player_Controller : MonoBehaviour
                 pellet_shooter.GetComponent<MeshRenderer>().enabled = true;
 
             //shoot
+            Sound_Manager.instance.PlaySingle(fire_sound);
             pellet_shooter.Shoot();
 
             firing_timer = 0;
