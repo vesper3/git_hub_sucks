@@ -61,6 +61,9 @@ public class Enemy_Generator : MonoBehaviour
 
     public int stage_5_scouts = 21;
 
+    public float stage_7_delay = 20.0f;
+    public bool stage_7_run = false;
+
     void Start()
     {
 
@@ -134,6 +137,8 @@ public class Enemy_Generator : MonoBehaviour
         {
             Debug.Log("Actvating Stage 7");
             stage = 7;
+            timer = stage_7_delay + Time.fixedTime;
+            stage_7_run = false;
         }
         else if (start_stage == 8)
         {
@@ -373,12 +378,25 @@ public class Enemy_Generator : MonoBehaviour
             Debug.Log("Placing Scout, Behavior: Default, From Above");
             GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.up), Quaternion.identity);
             Enemy_Controller EC = fighter.GetComponent<Enemy_Controller>();
-            if (i == 0)
-                EC.color = Pellet_Controller.colors.red;
-            else if (i == 1)
-                EC.color = Pellet_Controller.colors.green;
+            if (!stage_7_run)
+            {
+                if (i == 0)
+                    EC.color = Pellet_Controller.colors.red;
+                else if (i == 1)
+                    EC.color = Pellet_Controller.colors.green;
+                else
+                    EC.color = Pellet_Controller.colors.blue;
+            }
             else
-                EC.color = Pellet_Controller.colors.blue;
+            {
+                if (i == 0)
+                    EC.color = Pellet_Controller.colors.cyan;
+                else if (i == 1)
+                    EC.color = Pellet_Controller.colors.magenta;
+                else
+                    EC.color = Pellet_Controller.colors.yellow;
+                stage_7_run = false;
+            }
         }
         stage = 1;
     }
@@ -496,12 +514,28 @@ public class Enemy_Generator : MonoBehaviour
 
     public void Stage7()
     {
-
+        //Spawn a secondary color fighter, wait a bit, then spawn more and asteroids
+        if (!stage_7_run)
+        {
+            Debug.Log("Placing Fighter, Behavior: Default, OnScreen");
+            GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.onscreen), Quaternion.identity);
+            Enemy_Controller EC = fighter.GetComponent<Enemy_Controller>();
+            EC.color = Pellet_Controller.colors.yellow;
+            stage_7_run = true;
+        }
+        if (timer <= Time.fixedTime)
+        {
+            stage = 4;
+        }
     }
 
     public void Stage8()
     {
-
+        Debug.Log("Placing Turrent, Behavior: Default, OnScreen");
+        GameObject turrent = (GameObject)Instantiate(Turrent, generate_random_direction(direction.onscreen), Quaternion.identity);
+        Enemy_Controller EC = turrent.GetComponent<Enemy_Controller>();
+        EC.color = Pellet_Controller.colors.red;
+        stage = 2;
     }
 
     public void Stage9()
