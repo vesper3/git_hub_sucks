@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 114000324527705248}
   - component: {fileID: 23668272444382578}
   - component: {fileID: 33954584268621826}
+  - component: {fileID: 65432887642945358}
   m_Layer: 0
   m_Name: Scout
   m_TagString: Enemy
@@ -372,6 +373,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: -237260352}
   m_Mesh: {fileID: 4300000, guid: 7d92059a90ae5ce40a3240272bc65511, type: 3}
+--- !u!65 &65432887642945358
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: -237260352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.094749, y: 7.34361, z: 6.890812}
+  m_Center: {x: -0.02363801, y: -0.17220008, z: 0.22905397}
 --- !u!95 &95695675185560044
 Animator:
   serializedVersion: 3
@@ -411,6 +424,7 @@ MonoBehaviour:
   live: 0
   bounds: 0
   color: 0
+  health: 100
 --- !u!137 &137205028588162534
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

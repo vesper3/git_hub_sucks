@@ -52,6 +52,8 @@ GameObject:
   - component: {fileID: 4052545124543232}
   - component: {fileID: 95236386170365394}
   - component: {fileID: 114862581957282516}
+  - component: {fileID: 65467248597770852}
+  - component: {fileID: 114793951435066198}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Enemy
@@ -158,6 +160,18 @@ Transform:
   m_Father: {fileID: 4749295250800118}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65467248597770852
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427583710283724}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95236386170365394
 Animator:
   serializedVersion: 3
@@ -175,6 +189,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114793951435066198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1427583710283724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44e8352edc8458439bf733a83ed8889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GM: {fileID: 0}
+  pellet: {fileID: 114570748476934304, guid: 984365b8aa93be940a83a21150e6ec05, type: 2}
 --- !u!114 &114862581957282516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,6 +224,7 @@ MonoBehaviour:
   live: 0
   bounds: 0
   color: 0
+  health: 100
   timer: 0
   delay: 5
 --- !u!137 &137832556218911830
