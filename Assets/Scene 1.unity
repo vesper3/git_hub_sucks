@@ -303,6 +303,7 @@ MonoBehaviour:
   movement_speed: 50
   x_bounds: 65
   y_bounds: 180
+  fire_sound: {fileID: 8300000, guid: b7fdf2eaea681ea44889fef2c4a8e2e0, type: 3}
 --- !u!23 &283052055
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -847,12 +848,20 @@ MonoBehaviour:
   s_height: 130
   stage: 0
   timer: 0
+  rand: 0
   stage_1_delay: 0.5
   stage_1_asteroids: 25
+  stage_1_asteroid_groups: 3
+  stage_1_asteroids_per_group: 10
   stage_2_delay: 5
   stage_2_scouts: 12
+  stage_2_scouts_per_group: 10
+  stage_2_scout_groups: 3
   stage_3_delay: 5
   stage_3_fighters: 12
+  stage_3_scouts_per_group: 15
+  stage_3_scout_groups: 6
+  stage_4_fighters: 3
   stage_5_scouts: 21
 --- !u!4 &742598408
 Transform:
@@ -913,6 +922,7 @@ MonoBehaviour:
   movement_speed: 50
   x_bounds: 65
   y_bounds: 180
+  fire_sound: {fileID: 8300000, guid: b7fdf2eaea681ea44889fef2c4a8e2e0, type: 3}
 --- !u!23 &970665367
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1038,6 +1048,7 @@ MonoBehaviour:
   movement_speed: 50
   x_bounds: 65
   y_bounds: 180
+  fire_sound: {fileID: 8300000, guid: b7fdf2eaea681ea44889fef2c4a8e2e0, type: 3}
 --- !u!23 &1174530231
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1480,6 +1491,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 2145203032}
+  - component: {fileID: 2145203033}
   m_Layer: 0
   m_Name: Sound_Controller
   m_TagString: Untagged
@@ -1500,3 +1512,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2145203033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2145203031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 765f2a79420d95b4084910dc288b09c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  efxSource: {fileID: 563899546}
+  musicSource: {fileID: 473470262}
