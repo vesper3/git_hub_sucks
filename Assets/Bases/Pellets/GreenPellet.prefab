@@ -122,4 +122,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LC: {fileID: 0}
   speed: 100
+  x_bounds: 70
+  y_bounds: 185
   color: 2

@@ -213,7 +213,11 @@ public class Player_Controller : MonoBehaviour
             }
             else
             {
-                health += 1;
+                if (!dead)
+                    health += 1;
+                else
+                    health += 5;
+
                 if (health > 100)
                     health = 100;
                     
