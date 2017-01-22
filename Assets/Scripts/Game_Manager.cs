@@ -30,8 +30,9 @@ public class Game_Manager : MonoBehaviour
             EG.Activate_Stage(stage);
 	}
 
-    void StartGame()
+    public void StartGame()
     {
+        print("Game Started");
         EG.Activate_Stage(1);
     }
 

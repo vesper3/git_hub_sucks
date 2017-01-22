@@ -23,7 +23,7 @@ public class Pellet_Controller : MonoBehaviour
     public float x_bounds;
     public float y_bounds;
 
-    public enum colors { red, blue, green, yellow, cyan, magenta, white };
+    public enum colors { red, blue, green, yellow, cyan, magenta, white, gray };
     public colors color;
 
     void Start ()
@@ -62,7 +62,7 @@ public class Pellet_Controller : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {   
-        print("I hit something!");
+        //print("I hit something!");
 
         Vector3 hit = this.transform.position;
         Quaternion angle = Quaternion.identity;
