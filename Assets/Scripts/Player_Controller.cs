@@ -53,6 +53,8 @@ public class Player_Controller : MonoBehaviour
 
     Vector3 move_vector;
 
+    
+
 	void Start ()
     {
         has_special = true;
