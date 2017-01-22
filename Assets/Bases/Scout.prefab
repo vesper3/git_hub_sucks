@@ -9,9 +9,10 @@ GameObject:
   m_Component:
   - component: {fileID: 463538050}
   - component: {fileID: 95695675185560044}
+  - component: {fileID: 114000324527705248}
   m_Layer: 0
   m_Name: Scout
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -348,6 +349,28 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114000324527705248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: -237260352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd7ca42b0e505e408101ecbdbdfd965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GM: {fileID: 0}
+  EG: {fileID: 0}
+  actions: 0
+  movement_speed: 0
+  rotation_speed: 0
+  movement_vector: {x: 0, y: 0, z: 0}
+  aim_vector: {x: 0, y: 0, z: 0}
+  target_rotation: {x: 0, y: 0, z: 0, w: 0}
+  live: 0
+  bounds: 0
+  color: 0
 --- !u!137 &137205028588162534
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
