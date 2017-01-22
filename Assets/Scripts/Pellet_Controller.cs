@@ -44,11 +44,19 @@ public class Pellet_Controller : MonoBehaviour
     {   
         print("I hit something!");
 
+        //stack Overflow suggestion
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
+        {
+            Debug.Log("Point of contact: " + hit.point);
+        }
+
         if (other.gameObject.tag == "Pellet")
         {
             if (this.color == colors.red && other.GetComponent<Pellet_Controller>().color == colors.green)
             {
                 print("Red and Green Collided ");
+                //move and orient yellow object
                 LC.yellowShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
@@ -56,6 +64,7 @@ public class Pellet_Controller : MonoBehaviour
             else if (this.color == colors.blue && other.GetComponent<Pellet_Controller>().color == colors.green)
             {
                 print("Blue and Green Collided");
+                //move and orient cyan object
                 LC.cyanShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
@@ -63,6 +72,7 @@ public class Pellet_Controller : MonoBehaviour
             else if (this.color == colors.blue && other.GetComponent<Pellet_Controller>().color == colors.red)
             {
                 print("Blue and Red collided");
+                //move and orient magena object?
                 LC.magentaShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
@@ -70,6 +80,7 @@ public class Pellet_Controller : MonoBehaviour
             else if (this.color == colors.red && other.GetComponent<Pellet_Controller>().color == colors.cyan)
             {
                 print("Red and Cyan Collided ");
+                //move and orient white object?
                 LC.whiteShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
@@ -77,6 +88,7 @@ public class Pellet_Controller : MonoBehaviour
             else if (this.color == colors.blue && other.GetComponent<Pellet_Controller>().color == colors.yellow)
             {
                 print("Blue and Yellow Collided");
+                //move and orient white object
                 LC.whiteShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
@@ -84,6 +96,7 @@ public class Pellet_Controller : MonoBehaviour
             else if (this.color == colors.green && other.GetComponent<Pellet_Controller>().color == colors.magenta)
             {
                 print("Green and Magenta collided");
+                //move and orient white object
                 LC.whiteShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
