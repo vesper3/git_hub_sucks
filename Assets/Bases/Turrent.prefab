@@ -213,7 +213,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347786421567728}
   m_LocalRotation: {x: -0.13772587, y: 0.69884235, z: 0.6935645, w: 0.107792914}
-  m_LocalPosition: {x: 0.0071720015, y: -0.0022196204, z: 0.0041527366}
+  m_LocalPosition: {x: 1.4344003, y: -0.44392407, z: 0.83054733}
   m_LocalScale: {x: 0.99999976, y: 0.9999997, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 4510712846723620}
@@ -241,7 +241,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1835004203178168}
   m_LocalRotation: {x: -0.0000000098075, y: -0.12990423, z: -2.2577627e-15, w: 0.99152654}
-  m_LocalPosition: {x: -0.0077943644, y: 5.8845817e-10, z: 0}
+  m_LocalPosition: {x: -1.5588729, y: 0.000000117691634, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4460553257003882}
@@ -254,7 +254,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1820592321520840}
   m_LocalRotation: {x: 0.67970765, y: 0.73348314, z: 0.00000025045057, w: 0.00000041363077}
-  m_LocalPosition: {x: 0.006702308, y: -0.020846317, z: -0.00090760196}
+  m_LocalPosition: {x: 1.3404616, y: -4.1692634, z: -0.1815204}
   m_LocalScale: {x: 1, y: 1.0000231, z: 1}
   m_Children: []
   m_Father: {fileID: 4510712846723620}
@@ -267,7 +267,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1920400508769196}
   m_LocalRotation: {x: 0.70703536, y: 0.70703524, z: -0.010056205, w: 0.010051655}
-  m_LocalPosition: {x: -0, y: -0.0075237737, z: 0.00203774}
+  m_LocalPosition: {x: -0, y: -1.5047548, z: 0.407548}
   m_LocalScale: {x: 1, y: 1, z: 1.0001531}
   m_Children: []
   m_Father: {fileID: 4510712846723620}
@@ -280,7 +280,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1656115241164202}
   m_LocalRotation: {x: -0.094363905, y: -0.094363905, z: -0.700782, w: 0.70078206}
-  m_LocalPosition: {x: -0, y: -0.0034474565, z: 0.0011181887}
+  m_LocalPosition: {x: -0, y: -0.68949133, z: 0.22363776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4237498104802894}
@@ -315,7 +315,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1971123884094194}
   m_LocalRotation: {x: 0.69356436, y: 0.10779299, z: -0.1377259, w: 0.69884247}
-  m_LocalPosition: {x: -0.0071720015, y: -0.0022196204, z: 0.0041527366}
+  m_LocalPosition: {x: -1.4344003, y: -0.44392407, z: 0.83054733}
   m_LocalScale: {x: 0.99999964, y: 0.9999998, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 4510712846723620}
@@ -328,7 +328,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1479574403762866}
   m_LocalRotation: {x: 0.6657111, y: 0.74620956, z: 0.0000006676164, w: 0.00000077404223}
-  m_LocalPosition: {x: 0.019965403, y: -0.007672589, z: -0.002256154}
+  m_LocalPosition: {x: 3.9930806, y: -1.5345178, z: -0.45123082}
   m_LocalScale: {x: 1.0000004, y: 1.0000248, z: 1}
   m_Children: []
   m_Father: {fileID: 4510712846723620}
@@ -341,7 +341,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1043744191391090}
   m_LocalRotation: {x: 0.74620956, y: 0.6657111, z: 0.00000051225004, w: 0.0000006136852}
-  m_LocalPosition: {x: -0.020028492, y: -0.0076689697, z: -0.0022378785}
+  m_LocalPosition: {x: -4.0056987, y: -1.5337939, z: -0.44757572}
   m_LocalScale: {x: 1.0000004, y: 1.0000248, z: 1}
   m_Children: []
   m_Father: {fileID: 4510712846723620}
@@ -354,7 +354,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1072025207668098}
   m_LocalRotation: {x: 0.7334832, y: 0.6797076, z: 0.00000016593533, w: 0.00000020931442}
-  m_LocalPosition: {x: -0.006702308, y: -0.020846317, z: -0.00090760196}
+  m_LocalPosition: {x: -1.3404616, y: -4.1692634, z: -0.1815204}
   m_LocalScale: {x: 1.0000001, y: 1.0000231, z: 1}
   m_Children: []
   m_Father: {fileID: 4510712846723620}
@@ -426,6 +426,6 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 4460553257003882}
   m_AABB:
-    m_Center: {x: 0.0028702505, y: -0.000031551346, z: -0.002005335}
-    m_Extent: {x: 0.035457436, y: 0.028162561, z: 0.020006454}
+    m_Center: {x: 0.5740497, y: -0.0063095093, z: -0.40106678}
+    m_Extent: {x: 7.091488, y: 5.6325126, z: 4.001291}
   m_DirtyAABB: 0

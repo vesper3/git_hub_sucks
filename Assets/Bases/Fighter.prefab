@@ -111,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1369953142708824}
   m_LocalRotation: {x: 0, y: 0.000000014901161, z: -0, w: 1}
-  m_LocalPosition: {x: 0.026283871, y: 0.010813503, z: -0.02303065}
+  m_LocalPosition: {x: 1.839871, y: 0.7569452, z: -1.6121455}
   m_LocalScale: {x: 1.4748343, y: 1.4748343, z: 1.4748343}
   m_Children: []
   m_Father: {fileID: 4052545124543232}
@@ -124,7 +124,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506228462704602}
   m_LocalRotation: {x: 0.0356384, y: 0.6495923, z: 0.68727833, w: -0.32312268}
-  m_LocalPosition: {x: 0.060561698, y: 0.000000002235174, z: -0.016227454}
+  m_LocalPosition: {x: 4.239319, y: 0.00000015646219, z: -1.1359217}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_Children: []
   m_Father: {fileID: 4749295250800118}
@@ -137,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1272555505811584}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.026283871, y: 0.02303065, z: 0.010541963}
+  m_LocalPosition: {x: -1.839871, y: 1.6121455, z: 0.73793745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4898603663671500}
@@ -152,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1798687239908094}
   m_LocalRotation: {x: 0.703687, y: -0.32210413, z: 0.04390081, w: 0.6317803}
-  m_LocalPosition: {x: -0.007993953, y: 0.000000001490116, z: -0.016227458}
+  m_LocalPosition: {x: -0.55957675, y: 0.00000010430813, z: -1.135922}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_Children: []
   m_Father: {fileID: 4749295250800118}
@@ -241,6 +241,6 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 4454588809869142}
   m_AABB:
-    m_Center: {x: 0.01198509, y: -0.040961117, z: 0.041187655}
-    m_Extent: {x: 0.09078053, y: 0.08677298, z: 0.091560975}
+    m_Center: {x: 0.8389559, y: -2.8672783, z: 2.8831348}
+    m_Extent: {x: 6.354637, y: 6.074109, z: 6.4092684}
   m_DirtyAABB: 0

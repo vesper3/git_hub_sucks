@@ -1,25 +1,38 @@
 fileFormatVersion: 2
-guid: 0a9d175ac7556fc46836b7891faddef6
-timeCreated: 1485115890
+guid: 5c941b190a145534094d918a678555fd
+timeCreated: 1485116782
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Armature
-    100002: //RootNode
-    100004: Sphere
-    100006: wing_L
-    100008: wing_R
-    400000: Armature
-    400002: //RootNode
-    400004: Sphere
-    400006: wing_L
-    400008: wing_R
-    4300000: Sphere
+    100000: jaw_L
+    100002: jaw_R
+    100004: rig
+    100006: //RootNode
+    100008: spine_1
+    100010: spine_2
+    100012: spine_3
+    100014: spine_4
+    100016: wasp
+    100018: wing_L
+    100020: wing_R
+    400000: jaw_L
+    400002: jaw_R
+    400004: rig
+    400006: //RootNode
+    400008: spine_1
+    400010: spine_2
+    400012: spine_3
+    400014: spine_4
+    400016: wasp
+    400018: wing_L
+    400020: wing_R
+    4300000: rig
     7400000: Default Take
-    7400002: ArmatureAction_001
+    7400002: Armature_001_Armature_ArmatureAction_Armature_ArmatureAction
+    7400004: ArmatureAction
     9500000: //RootNode
-    13700000: Sphere
+    13700000: rig
   materials:
     importMaterials: 1
     materialName: 0
@@ -44,7 +57,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 70
+    globalScale: 50
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
