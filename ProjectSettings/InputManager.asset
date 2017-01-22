@@ -1,0 +1,343 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!13 &1
+InputManager:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Axes:
+  - serializedVersion: 3
+    m_Name: Fire1X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.001
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Fire2X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.001
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Fire3X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.001
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Move1X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 0
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Move1Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 1
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Aim1X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Aim1Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 4
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Move2X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 0
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Move2Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 1
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Aim2X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Aim2Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 4
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Move3X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 0
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Move3Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 1
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Aim3X
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 3
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Aim3Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 4
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Special1
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 8
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Special2
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 8
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Special3
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 8
+    joyNum: 3
+  - serializedVersion: 3
+    m_Name: Fire1Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 4
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: Fire2Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 4
+    joyNum: 2
+  - serializedVersion: 3
+    m_Name: Fire3Y
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0.1
+    sensitivity: 1
+    snap: 0
+    invert: 0
+    type: 2
+    axis: 4
+    joyNum: 3
