@@ -226,7 +226,7 @@ MonoBehaviour:
   color: 0
   health: 100
   timer: 0
-  delay: 5
+  delay: 1
 --- !u!137 &137832556218911830
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
