@@ -195,6 +195,13 @@ public class Player_Controller : MonoBehaviour
                     health = 0;
             }
 
+            if (other.gameObject.name.Contains("Missile"))
+            {
+                health -= 50;
+                if (health < 0)
+                    health = 0;
+            }
+
             else if (other.gameObject.name.Contains("Scout"))
             {
                 health -= 10;

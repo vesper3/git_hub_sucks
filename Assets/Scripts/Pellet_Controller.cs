@@ -67,7 +67,7 @@ public class Pellet_Controller : MonoBehaviour
         Vector3 hit = this.transform.position;
         Quaternion angle = Quaternion.identity;
 
-        angle.eulerAngles = new Vector3( 0, (Quaternion.Angle(this.transform.rotation, other.transform.rotation)), 0);
+        angle = Quaternion.Slerp(this.transform.rotation, other.transform.rotation, 0.5f);
 
 
         if (other.gameObject.tag == "Pellet")
@@ -139,6 +139,7 @@ public class Pellet_Controller : MonoBehaviour
         {
             if (GM.DEBUG == true)
                 print("I am hitting an enemy");
+            Destroy(other.gameObject);
             Destroy(gameObject);
 
             //Damage that Enemy
