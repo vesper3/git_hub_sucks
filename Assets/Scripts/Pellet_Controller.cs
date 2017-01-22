@@ -24,8 +24,6 @@ public class Pellet_Controller : MonoBehaviour
     public enum colors { red, blue, green, yellow, cyan, magenta, white };
     public colors color;
 
-    private colors otherColor;
-
     void Start ()
     {
 		GM = GameObject.FindObjectOfType<Game_Manager>();
@@ -43,28 +41,52 @@ public class Pellet_Controller : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {   
-        //otherColor = other.GetComponent<Pellet_Controller>().color;
         print("I hit something!");
-        if (this.color == colors.red)
-        {
-            print("Red bullet fired ");
-        }
-        if(this.color == colors.green)
-        {
-            print("Green bullet fired");
-        }
-        if (this.color == colors.blue)
-        {
-            print("Blue bullet fired");
-        }
 
         if (other.gameObject.tag == "Pellet")
         {
-            print(other.GetComponent<Pellet_Controller>().color);
-            print("Pellets Collided");
-            Destroy(gameObject);
-            Destroy(other.gameObject);
-
+            if (this.color == colors.red && other.GetComponent<Pellet_Controller>().color == colors.green)
+            {
+                print("Red and Green Collided ");
+                Destroy(gameObject);
+                Destroy(other.gameObject);
+            }
+            else if (this.color == colors.blue && other.GetComponent<Pellet_Controller>().color == colors.green)
+            {
+                print("Blue and Green Collided");
+                Destroy(gameObject);
+                Destroy(other.gameObject);
+            }
+            else if (this.color == colors.blue && other.GetComponent<Pellet_Controller>().color == colors.red)
+            {
+                print("Blue and Red collided");
+                Destroy(gameObject);
+                Destroy(other.gameObject);
+            }
+            else if (this.color == colors.red && other.GetComponent<Pellet_Controller>().color == colors.cyan)
+            {
+                print("Red and Cyan Collided ");
+                Destroy(gameObject);
+                Destroy(other.gameObject);
+            }
+            else if (this.color == colors.blue && other.GetComponent<Pellet_Controller>().color == colors.yellow)
+            {
+                print("Blue and Yellow Collided");
+                Destroy(gameObject);
+                Destroy(other.gameObject);
+            }
+            else if (this.color == colors.green && other.GetComponent<Pellet_Controller>().color == colors.magenta)
+            {
+                print("Green and Magenta collided");
+                Destroy(gameObject);
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                print("Unneeded collision");
+                Destroy(gameObject);
+                Destroy(other.gameObject);
+            }
         }
         else if (other.gameObject.tag == "Player")
         {
