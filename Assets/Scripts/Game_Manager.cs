@@ -32,6 +32,7 @@ public class Game_Manager : MonoBehaviour
 
     public void StartGame()
     {
+        print("Game Started");
         EG.Activate_Stage(1);
     }
 

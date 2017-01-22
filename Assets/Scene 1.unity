@@ -846,22 +846,14 @@ MonoBehaviour:
   Boss: {fileID: 907318114, guid: 46a04c292394b75429b0b0045480b666, type: 2}
   s_width: 360
   s_height: 130
-  stage: 1
+  stage: 0
   timer: 0
-  rand: 0
   stage_1_delay: 0.5
-  stage_1_asteroids: 15
-  stage_1_asteroid_groups: 3
-  stage_1_asteroids_per_group: 10
+  stage_1_asteroids: 25
   stage_2_delay: 5
   stage_2_scouts: 12
-  stage_2_scouts_per_group: 10
-  stage_2_scout_groups: 3
   stage_3_delay: 5
   stage_3_fighters: 12
-  stage_3_scouts_per_group: 15
-  stage_3_scout_groups: 6
-  stage_4_fighters: 3
   stage_5_scouts: 21
 --- !u!4 &742598408
 Transform:
@@ -1271,9 +1263,10 @@ GameObject:
   - component: {fileID: 1648743590}
   - component: {fileID: 1648743589}
   - component: {fileID: 1648743588}
+  - component: {fileID: 1648743592}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: StartBox
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1341,6 +1334,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1648743592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1648743587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd26cfac231a8946b59ad30f3d7e3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GM: {fileID: 691016336}
 --- !u!1 &2006034795
 GameObject:
   m_ObjectHideFlags: 0
