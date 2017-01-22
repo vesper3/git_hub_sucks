@@ -16,6 +16,7 @@ public class Fighter_Controller : Enemy_Controller
         EG = GameObject.FindObjectOfType<Enemy_Generator>();
         LC = GetComponent<Pellet_Shooter_Controller>();
         bounds = false;
+        r = GetComponent<Renderer>();
     }
 
     public override void Default_Behvaior()
