@@ -34,6 +34,7 @@ public class Enemy_Controller : MonoBehaviour
     public Quaternion target_rotation;
     public bool live;
     public bool bounds;
+    public Pellet_Controller.colors color;
 
     public void Start()
     {
