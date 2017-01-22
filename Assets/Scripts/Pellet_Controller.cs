@@ -43,27 +43,26 @@ public class Pellet_Controller : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {   
-        otherColor = other.GetComponent<Pellet_Controller>().color;
+        //otherColor = other.GetComponent<Pellet_Controller>().color;
         print("I hit something!");
-        
+        if (this.color == colors.red)
+        {
+            print("Red bullet fired ");
+        }
+
         if (other.gameObject.tag == "Pellet")
         {
-            print(otherColor);
-            if (GM.DEBUG == true)
-                print("I am hitting another pellet");
-            Destroy(transform.gameObject);
+            print(other.GetComponent<Pellet_Controller>().color);
+ 
+            Destroy(gameObject);
             Destroy(other.gameObject);
-            if(this.color == colors.red)
-            {
-                print("Red bullet fired ");
-            }
 
         }
         else if (other.gameObject.tag == "Player")
         {
             if (GM.DEBUG == true)
                 print("I am hitting a player");
-            Destroy(this);
+            Destroy(gameObject);
             //Heal that Player
 
         }
@@ -71,7 +70,7 @@ public class Pellet_Controller : MonoBehaviour
         {
             if (GM.DEBUG == true)
                 print("I am hitting an enemy");
-            Destroy(this);
+            Destroy(gameObject);
 
             //Damage that Enemy
         }
