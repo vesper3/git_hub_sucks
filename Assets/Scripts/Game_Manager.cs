@@ -20,6 +20,7 @@ public class Game_Manager : MonoBehaviour
     public bool DEBUG;
     public int stage;
 
+    //dont change from 10;
     public float time_till_enemy_check = 10.0f;
 
 	void Start ()
@@ -34,8 +35,13 @@ public class Game_Manager : MonoBehaviour
 
         if(time_till_enemy_check >= 0)
         {
-            GameObject[] enemys = GameObject.FindGameObjectsWithTag("Enemy");
-            //if(enemys.iemp)
+            if(GameObject.FindGameObjectWithTag("Enemy") == null)
+            {
+                stage++;
+                EG.Activate_Stage(stage);
+                time_till_enemy_check = 10.0f;
+            }
+            
         }
 
 	}
