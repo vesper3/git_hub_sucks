@@ -98,6 +98,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114208909187340188, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22,
+        type: 2}
+      propertyPath: mats.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4216781044309172, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22, type: 2}
       propertyPath: m_LocalPosition.x
       value: -2700
@@ -129,6 +134,43 @@ Prefab:
     - target: {fileID: 4216781044309172, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22, type: 2}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216781044309172, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 370
+      objectReference: {fileID: 0}
+    - target: {fileID: 4216781044309172, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5550
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860042848959814, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22, type: 2}
+      propertyPath: m_Name
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 114208909187340188, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22,
+        type: 2}
+      propertyPath: mats.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 549a96dda81f2d14c9626ec330f31594, type: 2}
+    - target: {fileID: 114208909187340188, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22,
+        type: 2}
+      propertyPath: mats.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f34e144196c27d140977b69931e8a94d, type: 2}
+    - target: {fileID: 114208909187340188, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22,
+        type: 2}
+      propertyPath: mats.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: bc0aa482ee45dc04b9108642cff6092c, type: 2}
+    - target: {fileID: 114208909187340188, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22,
+        type: 2}
+      propertyPath: mats.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 80eaad1c7547a404182522b3980b6486, type: 2}
+    - target: {fileID: 114208909187340188, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22,
+        type: 2}
+      propertyPath: background
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70ffdbbe25b9ef744aabc8a0be2ffc22, type: 2}
@@ -794,7 +836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EG: {fileID: 742598407}
   DEBUG: 1
-  stage: 8
+  stage: 1
   time_till_enemy_check: 10
 --- !u!4 &691016337
 Transform:
@@ -850,19 +892,11 @@ MonoBehaviour:
   timer: 0
   rand: 0
   stage_1_delay: 0.5
-  stage_1_asteroids: 25
   stage_1_asteroid_groups: 3
-  stage_1_asteroids_per_group: 10
   stage_2_delay: 5
-  stage_2_scouts: 12
-  stage_2_scouts_per_group: 10
   stage_2_scout_groups: 3
   stage_3_delay: 5
-  stage_3_fighters: 12
-  stage_3_scouts_per_group: 15
   stage_3_scout_groups: 6
-  stage_4_fighters: 3
-  stage_5_scouts: 21
   stage_7_delay: 20
   stage_7_run: 0
 --- !u!4 &742598408

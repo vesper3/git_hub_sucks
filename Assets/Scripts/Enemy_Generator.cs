@@ -42,24 +42,14 @@ public class Enemy_Generator : MonoBehaviour
 
     public float rand;
 
-    public float stage_1_delay = 5.0f;
-    public int stage_1_asteroids = 12;
+    public float stage_1_delay = 2.0f;
     public int stage_1_asteroid_groups = 3;
-    public int stage_1_asteroids_per_group = 10;
 
     public float stage_2_delay = 5.0f;
-    public int stage_2_scouts = 12;
-    public int stage_2_scouts_per_group = 10;
     public int stage_2_scout_groups = 3;
 
     public float stage_3_delay = 10.0f;
-    public int stage_3_fighters = 12;
-    public int stage_3_scouts_per_group = 15;
     public int stage_3_scout_groups = 6;
-
-    public int stage_4_fighters = 3;
-
-    public int stage_5_scouts = 21;
 
     public float stage_7_delay = 20.0f;
     public bool stage_7_run = false;
@@ -78,29 +68,8 @@ public class Enemy_Generator : MonoBehaviour
         else if (start_stage == -1)
         {
             Debug.Log("Actvating Debug Stage 1");
-            stage = 1;
+            stage = -1;
             timer = stage_1_delay + Time.fixedTime;
-        }
-        else if (start_stage == -2)
-        {
-            Debug.Log("Actvating Debug Stage 2");
-            stage = 2;
-            timer = stage_2_delay + Time.fixedTime;
-        }
-        else if (start_stage == -3)
-        {
-            Debug.Log("Actvating Debug Stage 3");
-            stage = 3;
-        }
-        else if (start_stage == -4)
-        {
-            Debug.Log("Actvating Debug Stage 4");
-            stage = 4;
-        }
-        else if (start_stage == -5)
-        {
-            Debug.Log("Actvating Debug Stage 5");
-            stage = 5;
         }
         else if (start_stage == 1)
         {
@@ -172,70 +141,17 @@ public class Enemy_Generator : MonoBehaviour
         {
 
         }
-        /*if (stage == -1)
+        if (stage == -1)
         {
-            //asteroids
             if (timer <= Time.fixedTime)
             {
                 Debug.Log("Placing Asteroid");
                 GameObject asteroid = (GameObject)Instantiate(Asteroid, generate_random_direction(direction.any), Quaternion.identity);
                 Enemy_Controller EC = asteroid.GetComponent<Enemy_Controller>();
                 EC.movement_speed = 0.5f;
-                --stage_1_asteroids;
                 timer = stage_1_delay + Time.fixedTime;
             }
-            if (stage_1_asteroids == 0)
-            {
-                stage = 0;
-            }
         }
-        else if (stage == -2)
-        {
-            //scouts
-            if (timer <= Time.fixedTime)
-            {
-                Debug.Log("Placing Scout");
-                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.any), Quaternion.identity);
-                --stage_2_scouts;
-                timer = stage_2_delay + Time.fixedTime;
-            }
-            if (stage_2_scouts == 0)
-            {
-                stage = 0;
-            }
-        }
-        else if (stage == -3)
-        {
-            //fighters
-            if (timer <= Time.fixedTime)
-            {
-                Debug.Log("Placing Fighter");
-                GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.any), Quaternion.identity);
-                --stage_3_fighters;
-                timer = stage_3_delay + Time.fixedTime;
-            }
-            if (stage_3_fighters == 0)
-            {
-                stage = 0;
-            }
-        }
-        else if (stage == -4)
-        {
-            //turrents
-            for (int i = 0; i < 3; ++i)
-            {
-                Debug.Log("Placing turrent");
-                GameObject turrent = (GameObject)Instantiate(Turrent, generate_random_direction(direction.onscreen), Quaternion.identity);
-            }
-            stage = 0;
-        }
-        else if (stage == -5)
-        {
-            //scout swarm
-            Debug.Log("Placing swarm");
-            GameObject swarm = (GameObject)Instantiate(Swarm, generate_random_direction(direction.any), Quaternion.identity);
-            stage = 0;
-        }*/
         else if (stage == 1)
         {
             Stage1();
@@ -283,7 +199,7 @@ public class Enemy_Generator : MonoBehaviour
         //Asteroids from above, in waves
         if (timer <= Time.fixedTime)
         {
-            for (int i = 0; i < stage_1_asteroids_per_group; ++i)
+            for (int i = 0; i < 10; ++i)
             {
                 Debug.Log("Placing Astroid, Behavior: Default, From Above");
                 GameObject asteroid = (GameObject)Instantiate(Asteroid, generate_random_direction(direction.up), Quaternion.identity);
@@ -298,7 +214,7 @@ public class Enemy_Generator : MonoBehaviour
             }
 
             --stage_1_asteroid_groups;
-            timer = stage_2_delay + Time.fixedTime;
+            timer = stage_1_delay + Time.fixedTime;
         }
         if (stage_1_asteroid_groups == 0)
         {
@@ -311,7 +227,7 @@ public class Enemy_Generator : MonoBehaviour
         //Three waves of scouts, each wave is a different color, default behavior, from above
         if (timer <= Time.fixedTime)
         {
-            for (int i = 0; i < stage_2_scouts_per_group; ++i)
+            for (int i = 0; i < 10; ++i)
             {
                 Debug.Log("Placing Scout, Behavior: Default, From Above");
                 GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.up), Quaternion.identity);
@@ -339,7 +255,7 @@ public class Enemy_Generator : MonoBehaviour
         rand = (float)Random.Range(1, 4);
         if (stage_3_scout_groups > 0 && timer <= Time.fixedTime)
         {
-            for (int i = 0; i < stage_3_scouts_per_group; ++i)
+            for (int i = 0; i < 15; ++i)
             {
                 Debug.Log("Placing Scout, Behavior: Default, From Above");
                 GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.up), Quaternion.identity);
@@ -373,7 +289,7 @@ public class Enemy_Generator : MonoBehaviour
     public void Stage4()
     {
         //Spawn 3 fighters from above, and continue to spawn asteroids from above
-        for (int i = 0; i < stage_4_fighters; ++i)
+        for (int i = 0; i < 3; ++i)
         {
             Debug.Log("Placing Scout, Behavior: Default, From Above");
             GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.up), Quaternion.identity);
@@ -479,34 +395,21 @@ public class Enemy_Generator : MonoBehaviour
         }
         for (int i = 0; i < 60; ++i)
         {
-            rand = (float)Random.Range(0, 4);
+            rand = (float)Random.Range(0, 3);
+            Debug.Log("Placing Scout, Behavior: Default, From Above");
+            GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.up), Quaternion.identity);
+            Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
             if (rand == 0)
             {
-                Debug.Log("Placing Scout, Behavior: Default, From Above");
-                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.up), Quaternion.identity);
-                Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
                 EC.color = Pellet_Controller.colors.blue;
             }
             else if (rand == 1)
             {
-                Debug.Log("Placing Scout, Behavior: Default, From Right");
-                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.right), Quaternion.identity);
-                Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
                 EC.color = Pellet_Controller.colors.green;
             }
             else if (rand == 2)
             {
-                Debug.Log("Placing Scout, Behavior: Default, From Left");
-                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.left), Quaternion.identity);
-                Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
                 EC.color = Pellet_Controller.colors.red;
-            }
-            else
-            {
-                Debug.Log("Placing Scout, Behavior: Default, From Below");
-                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.down), Quaternion.identity);
-                Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
-                EC.color = Pellet_Controller.colors.blue;
             }
         }
         stage = 0;
@@ -531,6 +434,7 @@ public class Enemy_Generator : MonoBehaviour
 
     public void Stage8()
     {
+        //Spawn 1 turrent, then add a few waves of scouts
         Debug.Log("Placing Turrent, Behavior: Default, OnScreen");
         GameObject turrent = (GameObject)Instantiate(Turrent, generate_random_direction(direction.onscreen), Quaternion.identity);
         Enemy_Controller EC = turrent.GetComponent<Enemy_Controller>();
@@ -540,12 +444,101 @@ public class Enemy_Generator : MonoBehaviour
 
     public void Stage9()
     {
-
+        //Place 3 turrents, some scouts, and some secondary colored fighters
+        Debug.Log("Placing Turrent, Behavior: Default, OnScreen");
+        GameObject turrent = (GameObject)Instantiate(Turrent, generate_random_direction(direction.onscreen), Quaternion.identity);
+        Enemy_Controller EC = turrent.GetComponent<Enemy_Controller>();
+        EC.color = Pellet_Controller.colors.red;
+        Debug.Log("Placing Turrent, Behavior: Default, OnScreen");
+        GameObject turrent1 = (GameObject)Instantiate(Turrent, generate_random_direction(direction.onscreen), Quaternion.identity);
+        Enemy_Controller EC1 = turrent1.GetComponent<Enemy_Controller>();
+        EC.color = Pellet_Controller.colors.blue;
+        Debug.Log("Placing Turrent, Behavior: Default, OnScreen");
+        GameObject turrent2 = (GameObject)Instantiate(Turrent, generate_random_direction(direction.onscreen), Quaternion.identity);
+        Enemy_Controller EC2 = turrent2.GetComponent<Enemy_Controller>();
+        EC.color = Pellet_Controller.colors.green;
+        for (int i = 0; i < 60; ++i)
+        {
+            rand = (float)Random.Range(0, 3);
+            Debug.Log("Placing Scout, Behavior: Default, From Anywhere");
+            GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.any), Quaternion.identity);
+            Enemy_Controller EC3 = scout.GetComponent<Enemy_Controller>();
+            if (rand == 0)
+            {
+                EC3.color = Pellet_Controller.colors.blue;
+            }
+            else if (rand == 1)
+            {
+                EC3.color = Pellet_Controller.colors.green;
+            }
+            else
+            {
+                EC3.color = Pellet_Controller.colors.red;
+            }
+        }
+        Debug.Log("Placing Fighter, Behavior: Default, From Below");
+        GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.down), Quaternion.identity);
+        Enemy_Controller EC4 = fighter.GetComponent<Enemy_Controller>();
+        EC4.color = Pellet_Controller.colors.cyan;
+        Debug.Log("Placing Fighter, Behavior: Default, From Below");
+        GameObject fighter1 = (GameObject)Instantiate(Fighter, generate_random_direction(direction.down), Quaternion.identity);
+        Enemy_Controller EC5 = fighter1.GetComponent<Enemy_Controller>();
+        EC5.color = Pellet_Controller.colors.magenta;
+        Debug.Log("Placing Fighter, Behavior: Default, From Below");
+        GameObject fighter2 = (GameObject)Instantiate(Fighter, generate_random_direction(direction.down), Quaternion.identity);
+        Enemy_Controller EC6 = fighter2.GetComponent<Enemy_Controller>();
+        EC6.color = Pellet_Controller.colors.yellow;
+        stage = 0;
     }
 
     public void Stage10()
     {
-
+        //Doom.
+        //Spawn 3 secondary color turrents, then 120 secondary colored scouts, then 3 secondary color fighters, then infinite asteroids, 1 per 2 seconds
+        Debug.Log("Placing Turrent, Behavior: Default, OnScreen");
+        GameObject turrent = (GameObject)Instantiate(Turrent, generate_random_direction(direction.onscreen), Quaternion.identity);
+        Enemy_Controller EC = turrent.GetComponent<Enemy_Controller>();
+        EC.color = Pellet_Controller.colors.cyan;
+        Debug.Log("Placing Turrent, Behavior: Default, OnScreen");
+        GameObject turrent1 = (GameObject)Instantiate(Turrent, generate_random_direction(direction.onscreen), Quaternion.identity);
+        Enemy_Controller EC1 = turrent1.GetComponent<Enemy_Controller>();
+        EC.color = Pellet_Controller.colors.magenta;
+        Debug.Log("Placing Turrent, Behavior: Default, OnScreen");
+        GameObject turrent2 = (GameObject)Instantiate(Turrent, generate_random_direction(direction.onscreen), Quaternion.identity);
+        Enemy_Controller EC2 = turrent2.GetComponent<Enemy_Controller>();
+        EC.color = Pellet_Controller.colors.yellow;
+        for (int i = 0; i < 120; ++i)
+        {
+            rand = (float)Random.Range(0, 3);
+            Debug.Log("Placing Scout, Behavior: Default, From Anywhere");
+            GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.any), Quaternion.identity);
+            Enemy_Controller EC3 = scout.GetComponent<Enemy_Controller>();
+            if (rand == 0)
+            {
+                EC3.color = Pellet_Controller.colors.cyan;
+            }
+            else if (rand == 1)
+            {
+                EC3.color = Pellet_Controller.colors.magenta;
+            }
+            else
+            {
+                EC3.color = Pellet_Controller.colors.yellow;
+            }
+        }
+        Debug.Log("Placing Fighter, Behavior: Default, From Below");
+        GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.any), Quaternion.identity);
+        Enemy_Controller EC4 = fighter.GetComponent<Enemy_Controller>();
+        EC4.color = Pellet_Controller.colors.cyan;
+        Debug.Log("Placing Fighter, Behavior: Default, From Below");
+        GameObject fighter1 = (GameObject)Instantiate(Fighter, generate_random_direction(direction.any), Quaternion.identity);
+        Enemy_Controller EC5 = fighter1.GetComponent<Enemy_Controller>();
+        EC5.color = Pellet_Controller.colors.magenta;
+        Debug.Log("Placing Fighter, Behavior: Default, From Below");
+        GameObject fighter2 = (GameObject)Instantiate(Fighter, generate_random_direction(direction.any), Quaternion.identity);
+        Enemy_Controller EC6 = fighter2.GetComponent<Enemy_Controller>();
+        EC6.color = Pellet_Controller.colors.yellow;
+        stage = -1;
     }
 
     public enum direction { up, down, left, right, horizontal, vertical, any, onscreen };
@@ -564,8 +557,8 @@ public class Enemy_Generator : MonoBehaviour
         float x_down = Random.Range(x_inner_bound, x_outer_bound);
         float x_up = Random.Range(-x_outer_bound, -x_inner_bound);
         //Values outside of the screen, random between up/down, left/right
-        float x_out = Random.value > 0.5f ? z_left : z_right;
-        float z_out = Random.value > 0.5f ? x_up : x_down;
+        float z_out = Random.value > 0.5f ? z_left : z_right;
+        float x_out = Random.value > 0.5f ? x_up : x_down;
         //Values somewhere within the screen bounds
         float x_in = Random.Range(-c, c);
         float z_in = Random.Range(-a, a);
@@ -576,13 +569,18 @@ public class Enemy_Generator : MonoBehaviour
         Debug.Log(z_inner_bound);
         Debug.Log(z_outer_bound);
         Debug.Log(x_in);
-        Debug.Log(z_in);*/
+        Debug.Log(z_in);
+        Debug.Log(x_out);
+        Debug.Log(z_out);*/
 
         if (dir == direction.any)
         {
-            return new Vector3(x_out, 0.0f, z_out);
+            if (Random.value > 0.5f)
+                dir = direction.horizontal;
+            else
+                dir = direction.vertical;
         }
-        else if (dir == direction.onscreen)
+        if (dir == direction.onscreen)
         {
             return new Vector3(x_in, 0.0f, z_in);
         }
