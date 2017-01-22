@@ -49,6 +49,14 @@ public class Pellet_Controller : MonoBehaviour
         {
             print("Red bullet fired ");
         }
+        if(this.color == colors.green)
+        {
+            print("Green bullet fired");
+        }
+        if (this.color == colors.blue)
+        {
+            print("Blue bullet fired");
+        }
 
         if (other.gameObject.tag == "Pellet")
         {
