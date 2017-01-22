@@ -44,12 +44,11 @@ public class Pellet_Controller : MonoBehaviour
     {   
         print("I hit something!");
 
-        //stack Overflow suggestion
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit))
-        {
-            Debug.Log("Point of contact: " + hit.point);
-        }
+        Vector3 hit = this.transform.position;
+        Quaternion angle = Quaternion.identity;
+
+        angle.eulerAngles = new Vector3( 0, (Quaternion.Angle(this.transform.rotation, other.transform.rotation)), 0);
+
 
         if (other.gameObject.tag == "Pellet")
         {
@@ -57,7 +56,7 @@ public class Pellet_Controller : MonoBehaviour
             {
                 print("Red and Green Collided ");
                 //move and orient yellow object
-                LC.yellowShoot();
+                LC.yellowShoot(hit, angle);
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
@@ -65,7 +64,7 @@ public class Pellet_Controller : MonoBehaviour
             {
                 print("Blue and Green Collided");
                 //move and orient cyan object
-                LC.cyanShoot();
+                LC.cyanShoot(hit, angle);
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
@@ -73,7 +72,7 @@ public class Pellet_Controller : MonoBehaviour
             {
                 print("Blue and Red collided");
                 //move and orient magena object?
-                LC.magentaShoot();
+                LC.magentaShoot(hit, angle);
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
@@ -81,7 +80,7 @@ public class Pellet_Controller : MonoBehaviour
             {
                 print("Red and Cyan Collided ");
                 //move and orient white object?
-                LC.whiteShoot();
+                LC.whiteShoot(hit, angle);
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
@@ -89,7 +88,7 @@ public class Pellet_Controller : MonoBehaviour
             {
                 print("Blue and Yellow Collided");
                 //move and orient white object
-                LC.whiteShoot();
+                LC.whiteShoot(hit, angle);
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
@@ -97,7 +96,7 @@ public class Pellet_Controller : MonoBehaviour
             {
                 print("Green and Magenta collided");
                 //move and orient white object
-                LC.whiteShoot();
+                LC.whiteShoot(hit, angle);
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
