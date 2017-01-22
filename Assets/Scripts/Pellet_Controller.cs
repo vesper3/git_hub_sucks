@@ -63,16 +63,17 @@ public class Pellet_Controller : MonoBehaviour
         {
             if (GM.DEBUG == true)
                 print("I am hitting a player");
-            Destroy(gameObject);
+            Destroy(this);
+            //Heal that Player
 
         }
         else if (other.gameObject.tag == "Enemy")
         {
             if (GM.DEBUG == true)
                 print("I am hitting an enemy");
-            Destroy(transform.gameObject);
+            Destroy(this);
 
-            //Damage Enemy
+            //Damage that Enemy
         }
     } 
 }
