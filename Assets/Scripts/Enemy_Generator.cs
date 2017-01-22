@@ -33,8 +33,8 @@ public class Enemy_Generator : MonoBehaviour
     public GameObject Missile;
     public GameObject Boss;
 
-    public float s_width = 320.0f;//Screen.width;
-    public float s_height = 140.0f;//Screen.height;
+    public float s_width = 360.0f;//Screen.width;
+    public float s_height = 130.0f;//Screen.height;
 
     public int stage;
 
@@ -165,53 +165,66 @@ public class Enemy_Generator : MonoBehaviour
     }
 
     public enum direction { up, down, left, right, horizontal, vertical, any, onscreen };
-    public Vector3 generate_random_direction(direction d)
+    public Vector3 generate_random_direction(direction dir)
     {
         //Values outside of the screen within half of the screen size
-        /*float left = Random.Range(s_height, s_height + (s_height / 2));
-        float right = Random.Range(-s_height - (s_height / 2), s_height);
-        float up = Random.Range(s_width, s_width + (s_width / 2));
-        float down = Random.Range(-s_width - (s_width / 2), s_width);*/
-        float x_right = Random.Range(200,240);
-        float x_left = Random.Range(-240,-200);
-        float z_down = Random.Range(88,105);
-        float z_up = Random.Range(-105,-88);
+        //320, 140
+        //200, 240
+        //88, 106
+        int a = (int)Mathf.Round(s_width / 2);
+        int b = (int)Mathf.Round(s_width / 8);
+        int c = (int)Mathf.Round(s_height / 2);
+        int d = (int)Mathf.Round(s_height / 8);
+        int x_inner_bound = a + b;
+        int x_outer_bound = x_inner_bound + b;
+        int z_inner_bound = c + d;
+        int z_outer_bound = z_inner_bound + d;
+        Debug.Log(s_width);
+        Debug.Log(s_height);
+        Debug.Log(x_inner_bound);
+        Debug.Log(x_outer_bound);
+        Debug.Log(z_inner_bound);
+        Debug.Log(z_outer_bound);
+        float x_right = Random.Range(200, 240);
+        float x_left = Random.Range(-240, -200);
+        float z_down = Random.Range(88, 105);
+        float z_up = Random.Range(-105, -88);
         //Values outside of the screen, random between up/down, left/right
         float x_out = Random.value > 0.5f ? x_left : x_right;
         float z_out = Random.value > 0.5f ? z_up : z_down;
         //Values somewhere within the screen bounds
-        float x_in = Random.Range(-s_width/2, s_width/2);
-        float z_in = Random.Range(-s_height/2, s_height/2);
+        float x_in = Random.Range(-s_width / 2, s_width / 2);
+        float z_in = Random.Range(-s_height / 2, s_height / 2);
 
-        if (d == direction.any)
+        if (dir == direction.any)
         {
             return new Vector3(x_out, 0.0f, z_out);
         }
-        else if (d == direction.onscreen)
+        else if (dir == direction.onscreen)
         {
             return new Vector3(x_in, 0.0f, z_in);
         }
-        else if (d == direction.up)
+        else if (dir == direction.up)
         {
             return new Vector3(x_in, 0.0f, z_up);
         }
-        else if (d == direction.down)
+        else if (dir == direction.down)
         {
             return new Vector3(x_in, 0.0f, z_down);
         }
-        else if (d == direction.left)
+        else if (dir == direction.left)
         {
             return new Vector3(x_left, 0.0f, z_in);
         }
-        else if (d == direction.right)
+        else if (dir == direction.right)
         {
             return new Vector3(x_right, 0.0f, z_in);
         }
-        else if (d == direction.horizontal)
+        else if (dir == direction.horizontal)
         {
             return new Vector3(x_out, 0.0f, z_in);
         }
-        else if (d == direction.vertical)
+        else if (dir == direction.vertical)
         {
             return new Vector3(x_in, 0.0f, z_out);
         }
