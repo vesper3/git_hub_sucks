@@ -139,6 +139,7 @@ public class Pellet_Controller : MonoBehaviour
         {
             if (GM.DEBUG == true)
                 print("I am hitting an enemy");
+            if(!other.gameObject.name.Contains("Start"))
             Destroy(other.gameObject);
             Destroy(gameObject);
 
