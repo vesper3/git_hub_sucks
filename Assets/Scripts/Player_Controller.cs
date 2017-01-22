@@ -28,6 +28,8 @@ public class Player_Controller : MonoBehaviour
 
     public string player;
 
+    public float health = 100.0f;
+
     //debug firing
     public Pellet_Shooter_Controller pellet_shooter;
     public float shine_time = 0.2f;
@@ -177,9 +179,24 @@ public class Player_Controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Bounds")
+        if (other.gameObject.tag == "Enemy")
         {
+            if (GM.DEBUG)
+                print("I hit an enemy");
 
+            if (other.gameObject.name.Contains("Asteroid"))
+                health -= 25;
+            else if(other.gameObject.name.Contains("Scout"))
+                health -= 10;
+
+        }
+
+        if(other.gameObject.tag == "Pellet")
+        {
+            if (other.gameObject.name.Contains("Grey"))
+                health -= 10;
+            else
+                health += 1;
         }
     }
 }

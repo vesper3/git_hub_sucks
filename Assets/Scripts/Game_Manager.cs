@@ -33,7 +33,7 @@ public class Game_Manager : MonoBehaviour
     {
         time_till_enemy_check -= Time.deltaTime;
 
-        if(time_till_enemy_check >= 0)
+        if(time_till_enemy_check <= 0)
         {
             if(GameObject.FindGameObjectWithTag("Enemy") == null)
             {
