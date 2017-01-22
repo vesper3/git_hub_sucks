@@ -793,7 +793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EG: {fileID: 742598407}
   DEBUG: 1
-  stage: 1
+  stage: 4
   time_till_enemy_check: 10
 --- !u!4 &691016337
 Transform:
@@ -845,14 +845,22 @@ MonoBehaviour:
   Boss: {fileID: 907318114, guid: 46a04c292394b75429b0b0045480b666, type: 2}
   s_width: 360
   s_height: 130
-  stage: 0
+  stage: 1
   timer: 0
+  rand: 0
   stage_1_delay: 0.5
-  stage_1_asteroids: 25
+  stage_1_asteroids: 15
+  stage_1_asteroid_groups: 3
+  stage_1_asteroids_per_group: 10
   stage_2_delay: 5
   stage_2_scouts: 12
+  stage_2_scouts_per_group: 10
+  stage_2_scout_groups: 3
   stage_3_delay: 5
   stage_3_fighters: 12
+  stage_3_scouts_per_group: 15
+  stage_3_scout_groups: 6
+  stage_4_fighters: 3
   stage_5_scouts: 21
 --- !u!4 &742598408
 Transform:

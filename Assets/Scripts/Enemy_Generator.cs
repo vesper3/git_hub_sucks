@@ -40,14 +40,24 @@ public class Enemy_Generator : MonoBehaviour
 
     public float timer;
 
+    public float rand;
+
     public float stage_1_delay = 5.0f;
     public int stage_1_asteroids = 12;
+    public int stage_1_asteroid_groups = 3;
+    public int stage_1_asteroids_per_group = 10;
 
     public float stage_2_delay = 5.0f;
     public int stage_2_scouts = 12;
+    public int stage_2_scouts_per_group = 10;
+    public int stage_2_scout_groups = 3;
 
-    public float stage_3_delay = 5.0f;
+    public float stage_3_delay = 10.0f;
     public int stage_3_fighters = 12;
+    public int stage_3_scouts_per_group = 15;
+    public int stage_3_scout_groups = 6;
+
+    public int stage_4_fighters = 3;
 
     public int stage_5_scouts = 21;
 
@@ -58,11 +68,41 @@ public class Enemy_Generator : MonoBehaviour
 
     public void Activate_Stage(int start_stage)
     {
-        if (start_stage == 1)
+        if (stage == 0)
+        {
+            Debug.Log("Game is now in standby...");
+        }
+        else if (start_stage == -1)
+        {
+            Debug.Log("Actvating Debug Stage 1");
+            stage = 1;
+            timer = stage_1_delay + Time.fixedTime;
+        }
+        else if (start_stage == -2)
+        {
+            Debug.Log("Actvating Debug Stage 2");
+            stage = 2;
+            timer = stage_2_delay + Time.fixedTime;
+        }
+        else if (start_stage == -3)
+        {
+            Debug.Log("Actvating Debug Stage 3");
+            stage = 3;
+        }
+        else if (start_stage == -4)
+        {
+            Debug.Log("Actvating Debug Stage 4");
+            stage = 4;
+        }
+        else if (start_stage == -5)
+        {
+            Debug.Log("Actvating Debug Stage 5");
+            stage = 5;
+        }
+        else if (start_stage == 1)
         {
             Debug.Log("Actvating Stage 1");
             stage = 1;
-            timer = stage_1_delay + Time.fixedTime;
         }
         else if (start_stage == 2)
         {
@@ -87,7 +127,7 @@ public class Enemy_Generator : MonoBehaviour
         }
         else
         {
-            Debug.Log("Wrong stage number");
+            Debug.Log("Not Debug stage number or not valid");
         }
     }
 
@@ -98,7 +138,11 @@ public class Enemy_Generator : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (stage == 1)
+        if(stage == 0)
+        {
+
+        }
+        /*if (stage == -1)
         {
             //asteroids
             if (timer <= Time.fixedTime)
@@ -115,7 +159,7 @@ public class Enemy_Generator : MonoBehaviour
                 stage = 0;
             }
         }
-        if (stage == 2)
+        else if (stage == -2)
         {
             //scouts
             if (timer <= Time.fixedTime)
@@ -130,7 +174,7 @@ public class Enemy_Generator : MonoBehaviour
                 stage = 0;
             }
         }
-        if (stage == 3)
+        else if (stage == -3)
         {
             //fighters
             if (timer <= Time.fixedTime)
@@ -145,23 +189,158 @@ public class Enemy_Generator : MonoBehaviour
                 stage = 0;
             }
         }
-        if (stage == 4)
+        else if (stage == -4)
         {
             //turrents
-             for (int i = 0; i < 3; ++i)
+            for (int i = 0; i < 3; ++i)
             {
                 Debug.Log("Placing turrent");
                 GameObject turrent = (GameObject)Instantiate(Turrent, generate_random_direction(direction.onscreen), Quaternion.identity);
             }
             stage = 0;
         }
-        if (stage == 5)
+        else if (stage == -5)
         {
             //scout swarm
             Debug.Log("Placing swarm");
             GameObject swarm = (GameObject)Instantiate(Swarm, generate_random_direction(direction.any), Quaternion.identity);
             stage = 0;
+        }*/
+        else if (stage == 1)
+        {
+            Stage1();
         }
+        else if (stage == 2)
+        {
+            Stage2();
+        }
+        else if (stage == 3)
+        {
+            Stage3();
+        }
+        else if (stage == 4)
+        {
+            Stage4();
+        }
+        else if (stage == 5)
+        {
+            Stage5();
+        }
+    }
+
+    public void Stage1()
+    {
+        //Asteroids from above, in waves
+        if (timer <= Time.fixedTime)
+        {
+            for (int i = 0; i < stage_1_asteroids_per_group; ++i)
+            {
+                Debug.Log("Placing Astroid, Behavior: Default, From Above");
+                GameObject asteroid = (GameObject)Instantiate(Asteroid, generate_random_direction(direction.up), Quaternion.identity);
+                Enemy_Controller EC = asteroid.GetComponent<Enemy_Controller>();
+                EC.movement_speed = 0.5f;
+                if (i == 0)
+                    EC.color = Pellet_Controller.colors.red;
+                else if (i == 1)
+                    EC.color = Pellet_Controller.colors.green;
+                else
+                    EC.color = Pellet_Controller.colors.blue;
+            }
+
+            --stage_1_asteroid_groups;
+            timer = stage_2_delay + Time.fixedTime;
+        }
+        if (stage_1_asteroid_groups == 0)
+        {
+            stage = 0;
+        }
+    }
+
+    public void Stage2()
+    {
+        //Three waves of scouts, each wave is a different color, default behavior, from above
+        if (timer <= Time.fixedTime)
+        {
+            for (int i = 0; i < stage_2_scouts_per_group; ++i)
+            {
+                Debug.Log("Placing Scout, Behavior: Default, From Above");
+                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.up), Quaternion.identity);
+                Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
+                if (i == 0)
+                    EC.color = Pellet_Controller.colors.red;
+                else if (i == 1)
+                    EC.color = Pellet_Controller.colors.green;
+                else
+                    EC.color = Pellet_Controller.colors.blue;
+            }
+
+            --stage_2_scout_groups;
+            timer = stage_2_delay + Time.fixedTime;
+        }
+        if (stage_2_scout_groups == 0)
+        {
+            stage = 0;
+        }
+    }
+
+    public void Stage3()
+    {
+        //6 randomly colored waves from above of scouts, + 1 lone scout from below
+        rand = (float)Random.Range(1, 4);
+        if (stage_3_scout_groups > 0 && timer <= Time.fixedTime)
+        {
+            for (int i = 0; i < stage_3_scouts_per_group; ++i)
+            {
+                Debug.Log("Placing Scout, Behavior: Default, From Above");
+                GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.up), Quaternion.identity);
+                Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
+                if (rand == 0)
+                    EC.color = Pellet_Controller.colors.red;
+                else if (rand == 1)
+                    EC.color = Pellet_Controller.colors.green;
+                else
+                    EC.color = Pellet_Controller.colors.blue;
+            }
+
+            --stage_3_scout_groups;
+            timer = stage_3_delay + Time.fixedTime;
+        }
+        if (stage_3_scout_groups == 0 && timer <= Time.fixedTime)
+        {
+            Debug.Log("Placing Scout, Behavior: Default, From Below");
+            GameObject scout = (GameObject)Instantiate(Scout, generate_random_direction(direction.down), Quaternion.identity);
+            Enemy_Controller EC = scout.GetComponent<Enemy_Controller>();
+            if (rand == 0)
+                EC.color = Pellet_Controller.colors.red;
+            else if (rand == 1)
+                EC.color = Pellet_Controller.colors.green;
+            else
+                EC.color = Pellet_Controller.colors.blue;
+            stage = 0;
+        }
+    }
+
+    public void Stage4()
+    {
+        //Spawn 3 fighters from above, and continue to spawn asteroids from above
+        for (int i = 0; i < stage_4_fighters; ++i)
+        {
+            Debug.Log("Placing Scout, Behavior: Default, From Above");
+            GameObject fighter = (GameObject)Instantiate(Fighter, generate_random_direction(direction.up), Quaternion.identity);
+            Enemy_Controller EC = fighter.GetComponent<Enemy_Controller>();
+            if (i == 0)
+                EC.color = Pellet_Controller.colors.red;
+            else if (i == 1)
+                EC.color = Pellet_Controller.colors.green;
+            else
+                EC.color = Pellet_Controller.colors.blue;
+        }
+        stage = 1;
+    }
+
+    public void Stage5()
+    {
+
     }
 
     public enum direction { up, down, left, right, horizontal, vertical, any, onscreen };
@@ -175,13 +354,13 @@ public class Enemy_Generator : MonoBehaviour
         int z_outer_bound = z_inner_bound + b;
         int x_inner_bound = c + d;
         int x_outer_bound = x_inner_bound + d;
-        float x_right = Random.Range(z_inner_bound, z_outer_bound);
-        float x_left = Random.Range(-z_outer_bound, -z_inner_bound);
-        float z_down = Random.Range(x_inner_bound, x_outer_bound);
-        float z_up = Random.Range(-x_outer_bound, -x_inner_bound);
+        float z_right = Random.Range(z_inner_bound, z_outer_bound);
+        float z_left = Random.Range(-z_outer_bound, -z_inner_bound);
+        float x_down = Random.Range(x_inner_bound, x_outer_bound);
+        float x_up = Random.Range(-x_outer_bound, -x_inner_bound);
         //Values outside of the screen, random between up/down, left/right
-        float x_out = Random.value > 0.5f ? x_left : x_right;
-        float z_out = Random.value > 0.5f ? z_up : z_down;
+        float x_out = Random.value > 0.5f ? z_left : z_right;
+        float z_out = Random.value > 0.5f ? x_up : x_down;
         //Values somewhere within the screen bounds
         float x_in = Random.Range(-c, c);
         float z_in = Random.Range(-a, a);
@@ -204,27 +383,27 @@ public class Enemy_Generator : MonoBehaviour
         }
         else if (dir == direction.up)
         {
-            return new Vector3(x_in, 0.0f, z_up);
+            return new Vector3(x_up, 0.0f, z_in);
         }
         else if (dir == direction.down)
         {
-            return new Vector3(x_in, 0.0f, z_down);
+            return new Vector3(x_down, 0.0f, z_in);
         }
         else if (dir == direction.left)
         {
-            return new Vector3(x_left, 0.0f, z_in);
+            return new Vector3(x_in, 0.0f, z_left);
         }
         else if (dir == direction.right)
         {
-            return new Vector3(x_right, 0.0f, z_in);
+            return new Vector3(x_in, 0.0f, z_right);
         }
         else if (dir == direction.horizontal)
         {
-            return new Vector3(x_out, 0.0f, z_in);
+            return new Vector3(x_in, 0.0f, z_out);
         }
         else if (dir == direction.vertical)
         {
-            return new Vector3(x_in, 0.0f, z_out);
+            return new Vector3(x_out, 0.0f, z_in);
         }
         else
         {
