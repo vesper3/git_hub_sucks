@@ -141,33 +141,32 @@ public class Pellet_Controller : MonoBehaviour
                 print("I am hitting an enemy");
             if (!other.gameObject.name.Contains("Start"))
             {
-                Destroy(other.gameObject);
+                //Destroy(other.gameObject);
 
-                //if (other.gameObject.name.Contains("Asteroid"))
-                //{
-                //    //-25 hp
-                //}
+                if (other.gameObject.name.Contains("Asteroid"))
+                {
+                    other.GetComponent<Enemy_Controller>().health -= 25;
+                }
 
-                //if (other.gameObject.name.Contains("Missile"))
-                //{
-                //    //- 100 hp
-                //}
+                if (other.gameObject.name.Contains("Missile"))
+                {
+                    other.GetComponent<Enemy_Controller>().health -= 100;
+                }
 
-                //else if (other.gameObject.name.Contains("Scout"))
-                //{
-                //    //- 25hp
-                //    //right color 100
-                //}
-                //else if (other.gameObject.name.Contains("Fighter"))
-                //{
-                //    //-12.5 health
-                //}
-                //else if (other.gameObject.name.Contains("Turret"))
-                //{
-                //    //-6.25
-                //}
+                else if (other.gameObject.name.Contains("Scout"))
+                {
+                    other.GetComponent<Enemy_Controller>().health -= 10;
+                }
+                else if (other.gameObject.name.Contains("Fighter"))
+                {
+                    other.GetComponent<Enemy_Controller>().health -= 12.5f;
+                }
+                else if (other.gameObject.name.Contains("Turret"))
+                {
+                    other.GetComponent<Enemy_Controller>().health -= 6.25f;
+                }
 
-                //Destroy(gameObject);
+                Destroy(gameObject);
             }
 
             //Damage that Enemy
