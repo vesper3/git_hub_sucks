@@ -53,7 +53,7 @@ public class Pellet_Controller : MonoBehaviour
         if (other.gameObject.tag == "Pellet")
         {
             print(other.GetComponent<Pellet_Controller>().color);
- 
+            print("Pellets Collided");
             Destroy(gameObject);
             Destroy(other.gameObject);
 
