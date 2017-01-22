@@ -16,7 +16,7 @@ Deletes when it collides with an uncolored pellet
 public class Pellet_Controller : MonoBehaviour
 {
     private Game_Manager GM;
-    private Pellet_Shooter_Controller LC;
+    public LaserController LC;
     
     public float speed;
 
@@ -27,6 +27,7 @@ public class Pellet_Controller : MonoBehaviour
     void Start ()
     {
 		GM = GameObject.FindObjectOfType<Game_Manager>();
+        LC = GameObject.FindObjectOfType<LaserController>();
     }
 	
 	void Update ()
@@ -48,36 +49,42 @@ public class Pellet_Controller : MonoBehaviour
             if (this.color == colors.red && other.GetComponent<Pellet_Controller>().color == colors.green)
             {
                 print("Red and Green Collided ");
+                LC.yellowShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
             else if (this.color == colors.blue && other.GetComponent<Pellet_Controller>().color == colors.green)
             {
                 print("Blue and Green Collided");
+                LC.cyanShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
             else if (this.color == colors.blue && other.GetComponent<Pellet_Controller>().color == colors.red)
             {
                 print("Blue and Red collided");
+                LC.magentaShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
             else if (this.color == colors.red && other.GetComponent<Pellet_Controller>().color == colors.cyan)
             {
                 print("Red and Cyan Collided ");
+                LC.whiteShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
             else if (this.color == colors.blue && other.GetComponent<Pellet_Controller>().color == colors.yellow)
             {
                 print("Blue and Yellow Collided");
+                LC.whiteShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }
             else if (this.color == colors.green && other.GetComponent<Pellet_Controller>().color == colors.magenta)
             {
                 print("Green and Magenta collided");
+                LC.whiteShoot();
                 Destroy(gameObject);
                 Destroy(other.gameObject);
             }

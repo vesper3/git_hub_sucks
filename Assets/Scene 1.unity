@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1152,11 +1152,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1354823005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b44e8352edc8458439bf733a83ed8889, type: 3}
+  m_Script: {fileID: 11500000, guid: 96ce0385c4da71c4f8ac81a2d963a2ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 0}
-  pellet: {fileID: 0}
+  yellow_shooter: {fileID: 172009217}
+  cyan_shooter: {fileID: 1568528914}
+  magenta_shooter: {fileID: 1354337858}
+  white_shooter: {fileID: 2036290487}
 --- !u!4 &1354823007
 Transform:
   m_ObjectHideFlags: 0
