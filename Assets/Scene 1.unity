@@ -794,7 +794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EG: {fileID: 742598407}
   DEBUG: 1
-  stage: 6
+  stage: 8
   time_till_enemy_check: 10
 --- !u!4 &691016337
 Transform:
@@ -863,6 +863,8 @@ MonoBehaviour:
   stage_3_scout_groups: 6
   stage_4_fighters: 3
   stage_5_scouts: 21
+  stage_7_delay: 20
+  stage_7_run: 0
 --- !u!4 &742598408
 Transform:
   m_ObjectHideFlags: 0
