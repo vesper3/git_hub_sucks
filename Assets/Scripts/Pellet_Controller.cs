@@ -149,21 +149,21 @@ public class Pellet_Controller : MonoBehaviour
                 }
                 else if (other.gameObject.name.Contains("Scout"))
                 {
-                    if (other.gameObject.GetComponent<Enemy_Controller>().color == color)
+                    if (other.gameObject.GetComponent<Enemy_Controller>().color == this.color)
                         other.GetComponent<Enemy_Controller>().health -= 100;
                     else
                         other.GetComponent<Enemy_Controller>().health -= 25;
                 }
                 else if (other.gameObject.name.Contains("Fighter"))
                 {
-                    if (other.gameObject.GetComponent<Enemy_Controller>().color == color)
+                    if (other.gameObject.GetComponent<Enemy_Controller>().color == this.color)
                         other.GetComponent<Enemy_Controller>().health -= 50f;
                     else
                         other.GetComponent<Enemy_Controller>().health -= 12.5f;
                 }
                 else if (other.gameObject.name.Contains("Turrent"))
                 {
-                    if (other.gameObject.GetComponent<Enemy_Controller>().color == color)
+                    if (other.gameObject.GetComponent<Enemy_Controller>().color == this.color)
                         other.GetComponent<Enemy_Controller>().health -= 25f;
                     else
                         other.GetComponent<Enemy_Controller>().health -= 6.25f;

@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GM: {fileID: 691016336}
-  pellet: {fileID: 0}
+  pellet: {fileID: 114570748476934304, guid: c0d5ae8acfd71534bb12280212d81554, type: 2}
 --- !u!1 &172009215
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,8 +835,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EG: {fileID: 742598407}
-  DEBUG: 1
-  stage: 10
+  DEBUG: 0
+  stage: 1
   time_till_enemy_check: 10
 --- !u!4 &691016337
 Transform:

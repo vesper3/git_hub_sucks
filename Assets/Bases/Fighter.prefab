@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 33230794083715844}
   - component: {fileID: 65123301290171396}
   - component: {fileID: 114702804915871114}
+  - component: {fileID: 114554220136980404}
   m_Layer: 0
   m_Name: Fighter
   m_TagString: Enemy
@@ -402,6 +403,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114554220136980404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1589927805693822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44e8352edc8458439bf733a83ed8889, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GM: {fileID: 0}
+  pellet: {fileID: 114570748476934304, guid: 984365b8aa93be940a83a21150e6ec05, type: 2}
 --- !u!114 &114702804915871114
 MonoBehaviour:
   m_ObjectHideFlags: 1
